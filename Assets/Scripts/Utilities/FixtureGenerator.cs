@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FixtureGenerator
+public static class FixtureGenerator
 {
   public static List<MatchWeek> GenerateFixtures(List<Team> teams)
   {
@@ -22,7 +22,7 @@ public class FixtureGenerator
     int totalWeeks = totalTeams - 1;
     int matchWeeksCount = totalTeams * 2;
 
-    for (int i = 0; week < matchWeeksCount; week++)
+    for (int week = 0; week < matchWeeksCount; week++)
     {
       MatchWeek matchWeek = new MatchWeek(week + 1);
       for (int i = 0; i < totalTeams / 2; i++)
@@ -32,7 +32,7 @@ public class FixtureGenerator
 
         if (homeIndex != awayIndex)
         {
-          matchWeek.AddFixture(new Fixture(teams[homeIndex], teams[awayIndex]));
+          matchWeek.AddFixture(new Fixture(teams[homeIndex], teams[awayIndex], matchWeek));
         }
       }
       matchWeeks.Add(matchWeek);

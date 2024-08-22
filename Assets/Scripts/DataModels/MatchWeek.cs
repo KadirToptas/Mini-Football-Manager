@@ -1,16 +1,18 @@
 using System.Collections.Generic;
 
-
+[System.Serializable]
 public class MatchWeek
 {
     public List<Fixture> fixtures;
     public int weekNumber;
+    public bool hasBeenPlayed;
 
 
     public MatchWeek(int number)
     {
         weekNumber = number;
-        fixtures = new List<Fixture>(); 
+        fixtures = new List<Fixture>();
+        hasBeenPlayed = false;
     }
 
     public void AddFixture(Fixture fixture)

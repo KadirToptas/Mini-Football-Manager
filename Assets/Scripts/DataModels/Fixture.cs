@@ -7,11 +7,14 @@ public class Fixture
     public int homeScore;
     public int awayScore;
 
-    public Fixture(Team home, Team away)
+    public MatchWeek MatchWeek;
+
+    public Fixture(Team home, Team away, MatchWeek matchWeek)
     {
         homeTeam = home;
         awayTeam = away;
         homeScore = 0;
-        awayScore = 0; 
+        awayScore = 0;
+        MatchWeek = matchWeek;
     }
 }
